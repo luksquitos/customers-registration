@@ -11,12 +11,6 @@ class ShortPagination(PageNumberPagination):
 
 
 class CustomerViewset(ModelViewSet):
-    
-    #FIXME Além do cpf ser pesquisado sem os
-    # pontos, também ser pesquisado com 
-    # os pontos. Trazer resultados
-    # para ambos as pesquisas. 
-    
     serializer_class = CustomerSerializer
     queryset = Customer.objects.all()
     pagination_class = ShortPagination
