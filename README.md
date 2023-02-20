@@ -61,6 +61,13 @@ docker exec -it api bash
 
 - `localhost:8000/customers/?page={integer}`: Sistema de páginas no endpoint
 
+
+## Testes
+Os testes presente em [tests.py](./app/customers/tests.py) é para verificação de integridade da função [`is_cpf_valid`](./app/customers/utils.py).
+
+Para executar os testes escritos, **basta entrar no terminal do container** e rodar o comando `python manage.py test`.
+
+
 ## Bibliotecas utilizadas
 - [Django](https://www.djangoproject.com/start/overview/)
 
