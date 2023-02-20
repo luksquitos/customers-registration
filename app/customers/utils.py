@@ -11,12 +11,14 @@ def is_cpf_valid(cpf: str):
     Returns True if it is.
     CPF must be a string.
     """    
-    cpf_only_numbers = cpf.replace('.', '').replace('-', '')
     
-    if isinstance(cpf, str):
-        cpf_multiplier_digits = cpf_only_numbers[:9]
-        
-    if not cpf_only_numbers.isnumeric() or isinstance(cpf, int):
+    if isinstance(cpf, int):
+        cpf = str(cpf)
+    
+    cpf_only_numbers = cpf.replace('.', '').replace('-', '')
+    cpf_multiplier_digits = cpf_only_numbers[:9]
+    
+    if not cpf_only_numbers.isnumeric():
         return False
     
     
