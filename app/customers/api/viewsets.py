@@ -26,7 +26,7 @@ class CustomerViewset(ModelViewSet):
     def create(self, request, *args, **kwargs):
         cpf = request.data.get('cpf')
         
-        if is_cpf_valid(cpf):
+        if is_cpf_valid(cpf) or not cpf:
             return super().create(request, *args, **kwargs)
         
         else:
@@ -37,7 +37,7 @@ class CustomerViewset(ModelViewSet):
     def update(self, request, *args, **kwargs):
         cpf = request.data.get('cpf')
         
-        if is_cpf_valid(cpf):
+        if is_cpf_valid(cpf) or not cpf:
             return super().update(request, *args, **kwargs)
         
         else:
