@@ -20,6 +20,9 @@ class CustomerViewset(ModelViewSet):
     filter_backends = [SearchFilter]
     search_fields = ["cpf"]
     
+    # These functions have been overridden to check
+    # the cpf coming from the POST and PUT methods.
+    
     def create(self, request, *args, **kwargs):
         cpf = request.data.get('cpf')
         
