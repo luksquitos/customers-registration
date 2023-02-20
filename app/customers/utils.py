@@ -4,12 +4,12 @@ for other files.
 """
 
 
-def is_cpf_valid(cpf: str):
+def is_cpf_valid(cpf: str) -> bool:
     """
     Function to check if a CPF is
     valid or not.
     Returns True if it is.
-    CPF must be a string.
+    CPF must be a string or a int.
     """    
     
     if isinstance(cpf, int):
@@ -18,7 +18,7 @@ def is_cpf_valid(cpf: str):
     cpf_only_numbers = cpf.replace('.', '').replace('-', '')
     cpf_multiplier_digits = cpf_only_numbers[:9]
     
-    if not cpf_only_numbers.isnumeric():
+    if not cpf_only_numbers.isnumeric() or len(cpf_only_numbers) != 11:
         return False
     
     
